@@ -1,0 +1,9 @@
+@mixin marginBetweenBlocks($size) {
+  margin-right: $size;
+  margin-top: $size;
+}
+
+@mixin blockSize($size) {
+  width: $size;
+  height: $size;
+}
