@@ -27,16 +27,16 @@
       content: "#{$i}";
     }
   }
-}
 
-@each $day, $num_day in $days {
-  .calendar-#{$day} > :first-child {
-    margin-left: $num_day * 100px + $num_day * 1px;
+  @each $day, $num_day in $days {
+    &-#{$day} > :first-child {
+      margin-left: $num_day * 100px + $num_day * 1px;
+    }
   }
-}
 
-@for $i from 28 through 31 {
-  .calendar-#{$i} > :nth-child(n + #{$i + 1}) {
-    display: none;
+  @for $i from 28 through 31 {
+    &-#{$i} > :nth-child(n + #{$i + 1}) {
+      display: none;
+    }
   }
 }
