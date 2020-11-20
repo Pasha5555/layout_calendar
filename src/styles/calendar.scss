@@ -5,28 +5,26 @@
   margin-top: 200px;
   width: 707px;
 
-  @for $i from 1 through 31 {
-    & > :nth-child(#{$i}) {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      @include marginBetweenBlocks(1px);
-      @include blockSize(100px);
-      background-color: #eee;
-      border: 1px solid #000;
-    }
+  & div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include marginBetweenBlocks(1px);
+    @include blockSize(100px);
+    background-color: #eee;
+    border: 1px solid #000;
+    transition: background-color 0.5s, transform 0.5s;
+    cursor: pointer;
 
-    & > :nth-child(#{$i})::after {
-      content: "#{$i}";
-      font-size: 30px;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
-    & > :nth-child(#{$i}):hover {
+    &:hover {
       background-color: pink;
       transform: translate(0, -20px);
-      transition: 0.5s;
-      cursor: pointer;
+    }
+  }
+
+  @for $i from 1 through 31 {
+    & > :nth-child(#{$i})::after {
+      content: "#{$i}";
     }
   }
 }
